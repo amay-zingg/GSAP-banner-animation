@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="446" height="112" viewBox="0 0 446 112">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 60px;
+        filter: url(#filter);
+        fill: #fff;
+        text-anchor: middle;
+        font-family: GothamBook;
+        text-transform: uppercase;
+      }
+    </style>
+    <filter id="filter" x="0" y="0" width="446" height="112" filterUnits="userSpaceOnUse">
+      <feGaussianBlur result="blur" stdDeviation="1.333" in="SourceAlpha"/>
+      <feComposite result="composite"/>
+      <feComposite result="composite-2"/>
+      <feComposite result="composite-3"/>
+      <feFlood result="flood" flood-opacity="0.24"/>
+      <feComposite result="composite-4" operator="in" in2="composite-3"/>
+      <feBlend result="blend" in2="SourceGraphic"/>
+      <feBlend result="blend-2" in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <text id="Interactive_Developers" data-name="Interactive Developers" class="cls-1" x="221.023" y="45.578"><tspan x="218.023">Interactive</tspan><tspan x="221.023" dy="72">Developers</tspan></text>
+</svg>
