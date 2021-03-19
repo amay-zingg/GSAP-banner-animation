@@ -1,11 +1,18 @@
+/* * * * BASE * * * */
 .banner-ad-container{
     position: relative;
     background: url(./../assets/BG.jpg);
     background-repeat: no-repeat;
-    height: 250px;
-    width: 300px;
 }
 
+.banner-ad-container, .banner-ad{
+    height: 250px;
+    width: 300px;
+     margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+    
 .banner-ad.border, .banner-ad.frame-1, .banner-ad.frame-2, .banner-ad.frame-3, .banner-ad.frame-4, .banner-ad.frame-5{
     position: absolute;
     top: 0;
@@ -14,22 +21,50 @@
     left: 0;
 }
 
-.banner-ad{
-    height: 250px;
-    width: 300px;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+.banner-ad.border{
+    // z-index: 50;
+    display: none;
 }
 
-.banner-ad.border{
-    z-index: 50;
+/* * * * FONT * * * */
+// https://transfonter.org/
+// Learned that I can just google the font and use this site to convert into @font-face
+@font-face {
+    font-family: 'Gotham';
+    src: url('./../font/Gotham-Book.eot');
+    src: url('./../font/Gotham-Book.eot?#iefix') format('embedded-opentype'),
+        url('./../font/Gotham-Book.woff') format('woff'),
+        url('./../font/Gotham-Book.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+.banner-ad, .frame-3-text p, .frame-4-text p, .frame-5-text p, a.CTA-button{
+    font-family: 'Gotham';
+    text-align: center;
+    color: #FFF;
+    text-transform: uppercase;
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: 2px;
+}
+
+p.frame-4-text-1, a.CTA-button{
+    text-transform: initial;
+    font-size: 13px;
+    line-height: 22px;
+    letter-spacing: 0;
+}
+
+a.CTA-button{
+    text-transform: capitalize;
+    font-size: 12px;
 }
 
 /* * * * FRAME 1 * * * */
 .banner-ad.frame-1{
-    background: url(./../assets/BG.jpg);
-    background-repeat: no-repeat;
+    opacity: 0;
 }
 
 .banner-ad.frame-1, .logo-face{
@@ -52,7 +87,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     opacity: 0;
-    // position: relative;
+    // z-index: 50;
 }
 
 .red-border-shape{
@@ -60,7 +95,6 @@
     background-repeat: no-repeat;
     background-position-y: 150%;
     height: 250px;
-    // z-index: 20;
 
     transform: scaleY(0,0);
     -ms-transform: scaleY(0,0);
@@ -68,17 +102,12 @@
 }
 
 /* * * * FRAME 3 * * * */
-.frame-3{
+.banner-ad.frame-3{
+    // z-index: 50;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.frame-3-text p{
-    text-transform: uppercase;
-    color: #FFF;
-    letter-spacing: 2px;
-    font-size: 3rem;
+    opacity: 0;
 }
 
 .frame-3-text-1, .frame-3-text-2, .frame-3-text-3{
@@ -87,3 +116,110 @@
     -ms-transform: scaleX(0,0);
     -webkit-transform: scaleX(0,0);
 }
+
+/* * * * FRAME 4 * * * */
+.banner-ad.frame-4{
+    background-image: url(./../assets/BG.jpg);
+    background-size: cover;
+    opacity: 1;
+}
+
+.frame-4.red-border-shape-top{ 
+    background: url(./../assets/F4-shape.png);
+    background-repeat: no-repeat;
+    background-position-y: 150%;
+    height: 250px;
+
+    transform: scaleY(0,0);
+    -ms-transform: scaleY(0,0);
+    -webkit-transform: scaleY(0,0);
+}
+
+.frame-4-text{
+    width: 100%;
+    height: 100%;
+    background-image: url(./../assets/shadowBG.png);
+    background-size: cover;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+}
+
+p.frame-4-text-2{
+    margin-bottom: 20px;
+}
+
+// .frame-4-text-1, .frame-4-text-2{
+//     opacity: 0;
+//     transform: scaleX(0,0);
+//     -ms-transform: scaleX(0,0);
+//     -webkit-transform: scaleX(0,0);
+// }
+
+.frame-4-image-2{
+    opacity: 0;
+}
+
+/* * * * FRAME 5 * * * */
+.banner-ad.frame-5{
+    background-image: url(./../assets/F5-BG.jpg);
+    background-size: cover;
+    opacity: 0;
+}
+
+.banner-ad.frame-5 .red-border-shape-top{ 
+    background: url(./../assets/F4-shape.png);
+    background-repeat: no-repeat;
+    height: 50%;
+
+    position: absolute;
+    top: -25px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.banner-ad.frame-5 .red-border-shape-top .logo{
+    margin: 45px 10px;
+    width: 45%;
+}
+
+.banner-ad.frame-5 .frame-5-text{
+    height: 100%;
+    width: 100%;
+    padding: 35px 20px 20px 20px;
+    background-image: url(./../assets/F5-shadow.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.CTA{
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+    left: 0;
+}
+
+a.CTA-button{
+    text-decoration: none;
+    display: inline-block;
+    margin: 0;
+    border: 1px solid transparent;
+    background-color: #d61f33;
+    height: 25.5px;
+    width: 104.5px;
+}
+
+a.CTA-button:hover, a.CTA-button:active{
+    border: 1px solid white;
+    text-shadow: 1px 1px 2px #000;
+    box-shadow: -1px 1px 5px #d61f33, 1px -1px 5px #d61f33;
+}
+
