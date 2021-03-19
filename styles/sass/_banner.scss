@@ -22,8 +22,7 @@
 }
 
 .banner-ad.border{
-    // z-index: 50;
-    display: none;
+    z-index: 50;
 }
 
 /* * * * FONT * * * */
@@ -68,7 +67,7 @@ a.CTA-button{
 
 /* * * * FRAME 1 * * * */
 .banner-ad.frame-1{
-    opacity: 0;
+    opacity: 1;
 }
 
 .banner-ad.frame-1, .logo-face{
@@ -90,15 +89,19 @@ a.CTA-button{
     background: url(./../assets/F2-BG.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    opacity: 1;
+    transform: scale(1,1);
+    -ms-transform: scale(1,1);
+    -webkit-transform: scale(1,1);
+    opacity: 0;
 }
 
 .banner-ad.frame-2 .red-border-shape{
     background: url(./../assets/F2-shape.png);
     background-repeat: no-repeat;
-    height: 50px;
+    height: 60px;
     width: 100%;
     position: absolute;
+    top: -60;
     bottom: 0;
     right: 0;
     left: 0;
@@ -109,7 +112,7 @@ a.CTA-button{
 .banner-ad.frame-3{
     background-image: url(./../assets/BG.jpg);
     background-size: cover;
-    opacity: 1;
+    opacity: 0;
 }
 
 .frame-3-text{
@@ -117,7 +120,7 @@ a.CTA-button{
     top: 0;
     bottom: 0;
     right: 0;
-    left: 0;
+    left: -50px;
     z-index: 50;
 
     display: flex;
@@ -127,11 +130,22 @@ a.CTA-button{
 }
 
 // p.frame-3-text-1, p.frame-3-text-2, p.frame-3-text-3{
-//     opacity: 1;
-//     // transform: scaleX(0,0);
-//     // -ms-transform: scaleX(0,0);
-//     // -webkit-transform: scaleX(0,0);
+//     // width: 300px;
+//     transform: rotate(-12.7deg) scaleX(-200px);
+//     -ms-transform: rotate(-12.7deg) scaleX(-200px);
+//     -webkit-transform: rotate(-12.7deg) scaleX(-200px);
 // }
+
+p.frame-3-text-1, p.frame-3-text-2, p.frame-3-text-3{
+    opacity: 1;
+     transform: scaleX(0,30);
+    -ms-transform: scaleX(0,30);
+    -webkit-transform: scaleX(0,30);
+}
+
+p.frame-3-text-2, p.frame-3-text-3{
+    opacity: 0;
+}
 
 /* * * * FRAME 4 * * * */
 .banner-ad.frame-4{
@@ -201,7 +215,7 @@ p.frame-4-text-2{
     opacity: 0;
 }
 
-.banner-ad.frame-5 .red-border-shape-top{ 
+.frame-5-red-border-shape-top{ 
     background: url(./../assets/F4-shape.png);
     background-repeat: no-repeat;
     height: 50%;
@@ -213,7 +227,7 @@ p.frame-4-text-2{
     left: 0;
 }
 
-.banner-ad.frame-5 .red-border-shape-top .logo{
+.frame-5-red-border-shape-top .logo{
     margin: 45px 10px;
     width: 45%;
 }
@@ -254,4 +268,3 @@ a.CTA-button:hover, a.CTA-button:active{
     text-shadow: 1px 1px 2px #000;
     box-shadow: -1px 1px 5px #d61f33, 1px -1px 5px #d61f33;
 }
-
