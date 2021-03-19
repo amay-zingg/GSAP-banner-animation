@@ -8,7 +8,7 @@
 .banner-ad-container, .banner-ad{
     height: 250px;
     width: 300px;
-     margin: 0;
+    margin: 0;
     padding: 0;
     overflow: hidden;
 }
@@ -50,6 +50,10 @@
     letter-spacing: 2px;
 }
 
+.frame-3-text p{
+    font-size: 28px;
+}
+
 p.frame-4-text-1, a.CTA-button{
     text-transform: initial;
     font-size: 13px;
@@ -86,53 +90,67 @@ a.CTA-button{
     background: url(./../assets/F2-BG.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    opacity: 0;
-    // z-index: 50;
+    opacity: 1;
 }
 
-.red-border-shape{
+.banner-ad.frame-2 .red-border-shape{
     background: url(./../assets/F2-shape.png);
     background-repeat: no-repeat;
-    background-position-y: 150%;
-    height: 250px;
-
-    transform: scaleY(0,0);
-    -ms-transform: scaleY(0,0);
-    -webkit-transform: scaleY(0,0);
+    height: 50px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 50;
 }
 
 /* * * * FRAME 3 * * * */
 .banner-ad.frame-3{
-    // z-index: 50;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-}
-
-.frame-3-text-1, .frame-3-text-2, .frame-3-text-3{
-    opacity: 0;
-    transform: scaleX(0,0);
-    -ms-transform: scaleX(0,0);
-    -webkit-transform: scaleX(0,0);
-}
-
-/* * * * FRAME 4 * * * */
-.banner-ad.frame-4{
     background-image: url(./../assets/BG.jpg);
     background-size: cover;
     opacity: 1;
 }
 
-.frame-4.red-border-shape-top{ 
+.frame-3-text{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 50;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+// p.frame-3-text-1, p.frame-3-text-2, p.frame-3-text-3{
+//     opacity: 1;
+//     // transform: scaleX(0,0);
+//     // -ms-transform: scaleX(0,0);
+//     // -webkit-transform: scaleX(0,0);
+// }
+
+/* * * * FRAME 4 * * * */
+.banner-ad.frame-4{
+    background-image: url(./../assets/BG.jpg);
+    background-size: cover;
+    opacity: 0;
+}
+
+.banner-ad.frame-4 .red-border-shape-top{ 
     background: url(./../assets/F4-shape.png);
     background-repeat: no-repeat;
-    background-position-y: 150%;
-    height: 250px;
-
-    transform: scaleY(0,0);
-    -ms-transform: scaleY(0,0);
-    -webkit-transform: scaleY(0,0);
+    height: 50%;
+    opacity: 0;
+    z-index: 50;
+    position: absolute;
+    top: -50px;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 
 .frame-4-text{
@@ -145,21 +163,35 @@ a.CTA-button{
     justify-content: flex-end;
     align-items: center;
     flex-direction: column;
+
+    opacity: 0;
+    z-index: 40;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 
 p.frame-4-text-2{
-    margin-bottom: 20px;
+    margin-bottom: 35px;
 }
 
-// .frame-4-text-1, .frame-4-text-2{
-//     opacity: 0;
-//     transform: scaleX(0,0);
-//     -ms-transform: scaleX(0,0);
-//     -webkit-transform: scaleX(0,0);
-// }
+.frame-4-images{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
 
-.frame-4-image-2{
+.frame-4-images .frame-4-image-1, .frame-4-images .frame-4-image-2{
     opacity: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 
 /* * * * FRAME 5 * * * */
