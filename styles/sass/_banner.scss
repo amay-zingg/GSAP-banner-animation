@@ -5,7 +5,7 @@
     background-repeat: no-repeat;
 }
 
-.banner-ad-container, .banner-ad{
+.banner-ad-container, .banner-ad, .floating-red-bg{
     height: 250px;
     width: 300px;
     margin: 0;
@@ -44,16 +44,20 @@
     text-align: center;
     color: #FFF;
     text-transform: uppercase;
-    font-size: 30px;
-    line-height: 36px;
+    font-size: 27px;
+    line-height: 34px;
     letter-spacing: 2px;
+}
+
+a.CTA-button{
+    font-size: 30px;
 }
 
 .frame-3-text p{
     font-size: 28px;
 }
 
-p.frame-4-text-1, a.CTA-button{
+.frame-4-text-1, a.CTA-button{
     text-transform: initial;
     font-size: 13px;
     line-height: 22px;
@@ -85,14 +89,37 @@ a.CTA-button{
 }
 
 /* * * * FRAME 2 * * * */
-.banner-ad.frame-2{
-    background: url(./../assets/F2-BG.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    transform: scale(1,1);
-    -ms-transform: scale(1,1);
-    -webkit-transform: scale(1,1);
+.floating-red-bg{
+    background-color: #d61f33;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: -300;
+    z-index: 30;
     opacity: 0;
+}
+
+.banner-ad.frame-2{
+    background-image: url(./../assets/F2-BG.jpg);
+    background-size: cover;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.frame-2-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom:0;
+     transform: scale(2,2);
+    -ms-transform: scale(2,2);
+    -webkit-transform: scale(2,2);
 }
 
 .banner-ad.frame-2 .red-border-shape{
@@ -101,7 +128,7 @@ a.CTA-button{
     height: 60px;
     width: 100%;
     position: absolute;
-    top: -60;
+    top: -300;
     bottom: 0;
     right: 0;
     left: 0;
@@ -120,7 +147,7 @@ a.CTA-button{
     top: 0;
     bottom: 0;
     right: 0;
-    left: -50px;
+    left: 0;
     z-index: 50;
 
     display: flex;
@@ -129,29 +156,30 @@ a.CTA-button{
     flex-direction: column;
 }
 
-// p.frame-3-text-1, p.frame-3-text-2, p.frame-3-text-3{
-//     // width: 300px;
-//     transform: rotate(-12.7deg) scaleX(-200px);
-//     -ms-transform: rotate(-12.7deg) scaleX(-200px);
-//     -webkit-transform: rotate(-12.7deg) scaleX(-200px);
-// }
-
-p.frame-3-text-1, p.frame-3-text-2, p.frame-3-text-3{
-    opacity: 1;
-     transform: scaleX(0,30);
-    -ms-transform: scaleX(0,30);
-    -webkit-transform: scaleX(0,30);
+.frame-3-text-1, .frame-3-text-2, .frame-3-text-3{
+    width: 300px;
+    text-align: center;
 }
 
-p.frame-3-text-2, p.frame-3-text-3{
+.frame-3-text-1, .frame-3-text-2, .frame-3-text-3{
     opacity: 0;
 }
+
 
 /* * * * FRAME 4 * * * */
 .banner-ad.frame-4{
     background-image: url(./../assets/BG.jpg);
     background-size: cover;
     opacity: 0;
+}
+
+.frame-4-bg{
+    position: absolute;
+    top: 0;
+    bottom: -300px;
+    left: 0;
+    right:0;
+    opacity: 1;
 }
 
 .banner-ad.frame-4 .red-border-shape-top{ 
@@ -187,7 +215,7 @@ p.frame-3-text-2, p.frame-3-text-3{
     left: 0;
 }
 
-p.frame-4-text-2{
+.frame-4-text-2{
     margin-bottom: 35px;
 }
 
@@ -208,11 +236,22 @@ p.frame-4-text-2{
     left: 0;
 }
 
+.frame-4-images .frame-4-image-2{
+    right: -300px;
+}
+
 /* * * * FRAME 5 * * * */
 .banner-ad.frame-5{
-    background-image: url(./../assets/F5-BG.jpg);
     background-size: cover;
     opacity: 0;
+}
+
+.banner-ad.frame-5 .frame-5-bg{
+    position: absolute;
+    top: 0;
+    bottom: -300px;
+    left: 0;
+    right: 0;
 }
 
 .frame-5-red-border-shape-top{ 
@@ -233,8 +272,11 @@ p.frame-4-text-2{
 }
 
 .banner-ad.frame-5 .frame-5-text{
-    height: 100%;
-    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     padding: 35px 20px 20px 20px;
     background-image: url(./../assets/F5-shadow.png);
     background-repeat: no-repeat;
@@ -257,6 +299,7 @@ a.CTA-button{
     text-decoration: none;
     display: inline-block;
     margin: 0;
+    transform: scale(1.5, 1.5);
     border: 1px solid transparent;
     background-color: #d61f33;
     height: 25.5px;
