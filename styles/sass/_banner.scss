@@ -3,6 +3,7 @@
     position: relative;
     background: url(./../assets/BG.jpg);
     background-repeat: no-repeat;
+    border: solid #000 1px;
 }
 
 .banner-ad-container, .banner-ad, .floating-red-bg{
@@ -13,16 +14,12 @@
     overflow: hidden;
 }
     
-.banner-ad.border, .banner-ad.frame-1, .banner-ad.frame-2, .banner-ad.frame-3, .banner-ad.frame-4, .banner-ad.frame-5{
+.banner-ad.frame-1, .banner-ad.frame-2, .banner-ad.frame-3, .banner-ad.frame-4, .banner-ad.frame-5{
     position: absolute;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
-}
-
-.banner-ad.border{
-    z-index: 50;
 }
 
 /* * * * FONT * * * */
@@ -81,65 +78,51 @@ a.CTA-button{
 }
 
 .logo-face{
+    opacity: 0;
     width: 60%;
     transform: scale(0,0);
     -ms-transform: scale(0,0);
     -webkit-transform: scale(0,0);
+}
+
+/* * * * BETWEEN FRAMES RED BG * * * */
+.banner-ad.floating-red-bg{
     opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 30;
 }
 
 /* * * * FRAME 2 * * * */
-.floating-red-bg{
-    background-color: #d61f33;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: -300;
-    z-index: 30;
-    opacity: 0;
-}
-
 .banner-ad.frame-2{
+    opacity: 0;
     background-image: url(./../assets/F2-BG.jpg);
     background-size: cover;
-    opacity: 0;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-}
 
-.frame-2-bg{
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom:0;
-     transform: scale(2,2);
-    -ms-transform: scale(2,2);
-    -webkit-transform: scale(2,2);
-}
-
-.banner-ad.frame-2 .red-border-shape{
-    background: url(./../assets/F2-shape.png);
-    background-repeat: no-repeat;
-    height: 60px;
-    width: 100%;
-    position: absolute;
-    top: -300;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    z-index: 50;
+    transform: scale(1,1);
+    -ms-transform: scale(1,1);
+    -webkit-transform: scale(1,1);
 }
 
 /* * * * FRAME 3 * * * */
 .banner-ad.frame-3{
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
     background-image: url(./../assets/BG.jpg);
     background-size: cover;
-    opacity: 0;
+    z-index: 40;
 }
 
 .frame-3-text{
@@ -159,35 +142,37 @@ a.CTA-button{
 .frame-3-text-1, .frame-3-text-2, .frame-3-text-3{
     width: 300px;
     text-align: center;
-}
-
-.frame-3-text-1, .frame-3-text-2, .frame-3-text-3{
     opacity: 0;
 }
-
 
 /* * * * FRAME 4 * * * */
 .banner-ad.frame-4{
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
     background-image: url(./../assets/BG.jpg);
     background-size: cover;
-    opacity: 0;
+    
 }
 
 .frame-4-bg{
+    opacity: 1;
     position: absolute;
     top: 0;
-    bottom: -300px;
+    bottom: 0;
     left: 0;
     right:0;
-    opacity: 1;
 }
 
 .banner-ad.frame-4 .red-border-shape-top{ 
+    opacity: 0;
     background: url(./../assets/F4-shape.png);
     background-repeat: no-repeat;
     height: 50%;
-    opacity: 0;
-    z-index: 50;
+    z-index: 60;
     position: absolute;
     top: -50px;
     bottom: 0;
@@ -196,6 +181,7 @@ a.CTA-button{
 }
 
 .frame-4-text{
+    opacity: 1;
     width: 100%;
     height: 100%;
     background-image: url(./../assets/shadowBG.png);
@@ -206,6 +192,23 @@ a.CTA-button{
     align-items: center;
     flex-direction: column;
 
+    z-index: 50;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.frame-4-text-1, .frame-4-text-2{
+    opacity: 0;
+}
+
+.frame-4-text-2{
+    margin-bottom: 35px;
+}
+
+.frame-4-images{
     opacity: 0;
     z-index: 40;
     position: absolute;
@@ -215,28 +218,20 @@ a.CTA-button{
     left: 0;
 }
 
-.frame-4-text-2{
-    margin-bottom: 35px;
-}
-
-.frame-4-images{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-}
-
-.frame-4-images .frame-4-image-1, .frame-4-images .frame-4-image-2{
+.frame-4-image-1, .frame-4-image-2{
     opacity: 0;
     position: absolute;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
+
+    transform: scale(1,1);
+    -ms-transform: scale(1,1);
+    -webkit-transform: scale(1,1);
 }
 
-.frame-4-images .frame-4-image-2{
+.frame-4-image-2{
     right: -300px;
 }
 
@@ -290,6 +285,7 @@ a.CTA-button{
 
 .CTA{
     position: absolute;
+    z-index: 60;
     bottom: 20px;
     right: 0;
     left: 0;
@@ -310,4 +306,8 @@ a.CTA-button:hover, a.CTA-button:active{
     border: 1px solid white;
     text-shadow: 1px 1px 2px #000;
     box-shadow: -1px 1px 5px #d61f33, 1px -1px 5px #d61f33;
+}
+
+span.CTA-arrow:hover, span.CTA-arrow:active{
+    color: #000;
 }
