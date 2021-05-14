@@ -1,313 +1,124 @@
-/* * * * BASE * * * */
-.banner-ad-container{
-    position: relative;
-    background: url(./../assets/BG.jpg);
-    background-repeat: no-repeat;
-    border: solid #000 1px;
+/* Utility Classes */
+.adSize {
+  width: 300px;
+  height: 250px;
+}
+.vidHid {
+  opacity: 0;
+  visibility: hidden;
+}
+.posAb {
+  position: absolute;
+}
+.topLef {
+  left: 0px;
+  top: 0px;
+}
+.botLef {
+  left: 0px;
+  bottom: 0px;
+}
+.bgDef {
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+}
+.overFlowHid {
+  overflow: hidden;
 }
 
-.banner-ad-container, .banner-ad, .floating-red-bg{
-    height: 250px;
-    width: 300px;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-    
-.banner-ad.frame-1, .banner-ad.frame-2, .banner-ad.frame-3, .banner-ad.frame-4, .banner-ad.frame-5{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
+#template {
+  /* background: no-repeat url("../assets/tmpProd.png"); */
 }
 
-/* * * * FONT * * * */
-// https://transfonter.org/
-// Learned that I can just google the font and use this site to convert into @font-face
-@font-face {
-    font-family: 'Gotham';
-    src: url('./../font/Gotham-Book.eot');
-    src: url('./../font/Gotham-Book.eot?#iefix') format('embedded-opentype'),
-        url('./../font/Gotham-Book.woff') format('woff'),
-        url('./../font/Gotham-Book.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
+/* Ad Style */
+#GL_bg1-1 {
+  background-color: #d2202f;
 }
 
-.banner-ad, .frame-3-text p, .frame-4-text p, .frame-5-text p, a.CTA-button{
-    font-family: 'Gotham';
-    text-align: center;
-    color: #FFF;
-    text-transform: uppercase;
-    font-size: 27px;
-    line-height: 34px;
-    letter-spacing: 2px;
+#F1_image1-1 {
+  background-image: url("../assets/F1_image1-1.png");
 }
 
-a.CTA-button{
-    font-size: 30px;
+#F2_image1-1 {
+  background-image: url("../assets/F2_image1-1.jpg");
+}
+#F2_image2-1 {
+  background-color: #d2202f;
+  height: 100px;
+  width: 400px;
+  left: -50px;
+  bottom: -60px;
 }
 
-.frame-3-text p{
-    font-size: 28px;
+#F3_text1-1 {
+  background-image: url("../assets/F3_text1-1.png");
 }
 
-.frame-4-text-1, a.CTA-button{
-    text-transform: initial;
-    font-size: 13px;
-    line-height: 22px;
-    letter-spacing: 0;
+#F4_text1-1 {
+  background-image: url("../assets/F4_text1-1.png");
+}
+#F4_text1-2 {
+  background-image: url("../assets/F4_text1-2.png");
+}
+#F4_image1-1 {
+  background-image: url("../assets/F4_image1-1.jpg");
+}
+#F4_image2-1 {
+  background-color: #d2202f;
+  height: 400px;
+  width: 400px;
+  left: -50px;
+  top: -370px;
 }
 
-a.CTA-button{
-    text-transform: capitalize;
-    font-size: 12px;
+#F5_cta1-1 {
+  background-image: url("../assets/F5_cta1-1.png");
+}
+#F5_ctaArrow1-1 {
+  background-image: url("../assets/F5_ctaArrow1-1.png");
+}
+#F5_ctaBg1-1 {
+  background-image: url("../assets/F5_ctaBg1-1.png");
+}
+#F5_image1-1 {
+  background-image: url("../assets/F5_image1-1.jpg");
+}
+#F5_image2-1 {
+  background-color: #d2202f;
+  height: 400px;
+  width: 400px;
+  left: -50px;
+  top: -355px;
+}
+#F5_logo1-1 {
+  background-image: url("../assets/F5_logo1-1.png");
+}
+#F5_text1-1 {
+  background-image: url("../assets/F5_text1-1.png");
+}
+#F5_text1-2 {
+  background-image: url("../assets/F5_text1-2.png");
+}
+#F5_text1-3 {
+  background-image: url("../assets/F5_text1-3.png");
 }
 
-/* * * * FRAME 1 * * * */
-.banner-ad.frame-1{
-    opacity: 1;
+#F5-ctaHover1 {
+  opacity: 1;
+  position: absolute;
+  width: 105px;
+  height: 26px;
+  top: 199.6px;
+  left: 98px;
+  overflow: hidden;
 }
 
-.banner-ad.frame-1, .logo-face{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.logo-face{
-    opacity: 0;
-    width: 60%;
-    transform: scale(0,0);
-    -ms-transform: scale(0,0);
-    -webkit-transform: scale(0,0);
-}
-
-/* * * * BETWEEN FRAMES RED BG * * * */
-.banner-ad.floating-red-bg{
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 30;
-}
-
-/* * * * FRAME 2 * * * */
-.banner-ad.frame-2{
-    opacity: 0;
-    background-image: url(./../assets/F2-BG.jpg);
-    background-size: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-    transform: scale(1,1);
-    -ms-transform: scale(1,1);
-    -webkit-transform: scale(1,1);
-}
-
-/* * * * FRAME 3 * * * */
-.banner-ad.frame-3{
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background-image: url(./../assets/BG.jpg);
-    background-size: cover;
-    z-index: 40;
-}
-
-.frame-3-text{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    z-index: 50;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.frame-3-text-1, .frame-3-text-2, .frame-3-text-3{
-    width: 300px;
-    text-align: center;
-    opacity: 0;
-}
-
-/* * * * FRAME 4 * * * */
-.banner-ad.frame-4{
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background-image: url(./../assets/BG.jpg);
-    background-size: cover;
-    
-}
-
-.frame-4-bg{
-    opacity: 1;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right:0;
-}
-
-.banner-ad.frame-4 .red-border-shape-top{ 
-    opacity: 0;
-    background: url(./../assets/F4-shape.png);
-    background-repeat: no-repeat;
-    height: 50%;
-    z-index: 60;
-    position: absolute;
-    top: -50px;
-    bottom: 0;
-    right: 0;
-    left: 0;
-}
-
-.frame-4-text{
-    opacity: 1;
-    width: 100%;
-    height: 100%;
-    background-image: url(./../assets/shadowBG.png);
-    background-size: cover;
-
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    flex-direction: column;
-
-    z-index: 50;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-}
-
-.frame-4-text-1, .frame-4-text-2{
-    opacity: 0;
-}
-
-.frame-4-text-2{
-    margin-bottom: 35px;
-}
-
-.frame-4-images{
-    opacity: 0;
-    z-index: 40;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-}
-
-.frame-4-image-1, .frame-4-image-2{
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-
-    transform: scale(1,1);
-    -ms-transform: scale(1,1);
-    -webkit-transform: scale(1,1);
-}
-
-.frame-4-image-2{
-    right: -300px;
-}
-
-/* * * * FRAME 5 * * * */
-.banner-ad.frame-5{
-    background-size: cover;
-    opacity: 0;
-}
-
-.banner-ad.frame-5 .frame-5-bg{
-    position: absolute;
-    top: 0;
-    bottom: -300px;
-    left: 0;
-    right: 0;
-}
-
-.frame-5-red-border-shape-top{ 
-    background: url(./../assets/F4-shape.png);
-    background-repeat: no-repeat;
-    height: 50%;
-
-    position: absolute;
-    top: -25px;
-    bottom: 0;
-    right: 0;
-    left: 0;
-}
-
-.frame-5-red-border-shape-top .logo{
-    margin: 45px 10px;
-    width: 45%;
-}
-
-.banner-ad.frame-5 .frame-5-text{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 35px 20px 20px 20px;
-    background-image: url(./../assets/F5-shadow.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.CTA{
-    position: absolute;
-    z-index: 60;
-    bottom: 20px;
-    right: 0;
-    left: 0;
-}
-
-a.CTA-button{
-    text-decoration: none;
-    display: inline-block;
-    margin: 0;
-    transform: scale(1.5, 1.5);
-    border: 1px solid transparent;
-    background-color: #d61f33;
-    height: 25.5px;
-    width: 104.5px;
-}
-
-a.CTA-button:hover, a.CTA-button:active{
-    border: 1px solid white;
-    text-shadow: 1px 1px 2px #000;
-    box-shadow: -1px 1px 5px #d61f33, 1px -1px 5px #d61f33;
-}
-
-span.CTA-arrow:hover, span.CTA-arrow:active{
-    color: #000;
+#sheen {
+  background: url(../assets/sheen.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 105px;
+  height: 25px;
+  /* top: -10px; */
+  position: absolute;
 }

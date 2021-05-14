@@ -1,6 +1,9 @@
 /.vscode
 /assets/.DS_store
 
+/GSAP-banner-animation
+loader.js
+
 # keys.js
 # /scripts/minified
 
