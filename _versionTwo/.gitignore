@@ -1,0 +1,14 @@
+/.vscode
+/assets/.DS_store
+
+first-version.js
+loader.js
+
+# keys.js
+# /scripts/minified
+
+# Ignore Mac System Files
+.DS_store
+thumbs.db
+
+# https://devconnected.com/how-to-clear-git-cache/

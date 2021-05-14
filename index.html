@@ -23,7 +23,7 @@
 <body>
     <div class="wrapper"><main>
         <section class="section-1">
-            <div id="viewport" class="adSize vidHid">
+            <div id="viewport" class="adSize vidHid overFlowHid">
                 <div id="GL_bg1-1" class="adSize posAb topLef"></div>
             
                 <div id="F1_image1-1" class="adSize posAb topLef bgDef"></div>
@@ -75,7 +75,32 @@
 
     <!-- Ad Animation -->
     <script src="js/scripts.js"></script>
-    <script src="js/loader.js"></script>
+    <!-- Image Loader -->
+    <script type="text/javascript">
+      var imgloads = document.querySelectorAll("*");
+      var viewportChildren = document.getElementById("viewport").children;
+      var imgcount = 0;
+
+      for (var i = 0; i < viewportChildren.length; i++) {
+        viewportChildren[i].style.opacity = 0;
+      }
+
+      window.addEventListener(
+        "DOMContentLoaded",
+        function () {
+          for (var i = 0; i < imgloads.length; i++) {
+            imagesLoaded(imgloads[i], { background: true }, function () {
+              imgcount++;
+              if (imgcount === imgloads.length) {
+                init();
+              }
+            });
+          }
+        },
+        false
+      );
+    </script>
 </body>
+
 
 </html>
