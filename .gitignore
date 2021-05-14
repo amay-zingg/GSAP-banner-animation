@@ -1,7 +1,6 @@
 /.vscode
 /assets/.DS_store
 
-/GSAP-banner-animation
 loader.js
 
 # keys.js
@@ -12,3 +11,4 @@ loader.js
 thumbs.db
 
 # https://devconnected.com/how-to-clear-git-cache/
+
